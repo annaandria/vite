@@ -1,15 +1,7 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from 'tailwindcss/vite'
 
 export default defineConfig({
-  server: {
-    host: 'localhost',
-    headers: {
-      'Cache-Control': 'no-store',
-    },
-  },
-  build: {
-    //speed up build
-    minify: false,
-    target: 'esnext',
-  },
+  plugins: [react(), tailwindcss()],
 })
